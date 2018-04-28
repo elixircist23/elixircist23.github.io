@@ -321,7 +321,7 @@ function onClickOfLogout() {
 
             if (myObj["response"] == "pass") {
                 localStorage.clear();
-                window.location = "loginRegister.html";
+                window.location = "index.html";
             } else {
                 console.log("Logout error");
             }
