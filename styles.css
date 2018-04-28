@@ -1,3 +1,242 @@
+/* Snack Bar start */
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+
+/* Snack Bar ends */
+
+
+/* Alert css starts */
+.alertMargin{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/* Alert css ends */
+
+/*
+All Replies
+*/
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
+    }
+.replyBorder{
+    border-bottom: solid;
+    border-left: solid;
+    border-top: solid;
+    border-width: 0.05px;
+    border-color: #e5e5e5;
+    padding-top : 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+
+    
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    
+}
+
+#postByTimeColumn{
+    padding: 0px;
+}
+#mainReplyRow{
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+.individualMainReply{
+    padding-top: 5px;
+}
+
+.textAreaForReply{
+    box-sizing:auto;
+}
+
+#replyBodyColumn{
+    margin-left: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#replyColumn{
+    text-align: right;
+    /* padding-top:5px; */
+    padding-bottom: 10px;
+}
+#connectColumn{
+    text-align: right;
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+
+.replyButtons{
+    background-color: #f9f9f9;    
+    color: #848484;
+    min-width: initial;
+    border: none;
+    height: 35px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.replyButtons:hover{
+    background-color: #EEEEEE;
+    /* color: white; */
+    color: #5A6268;
+}
+
+#replyIcon1{
+    font-size: 12px;
+}
+
+#connectIcon1{
+    font-size: 12px;    
+}
+/* BUTTON FOR EXPANDING POST */
+.postExpandCol{
+    text-align: right;
+}
+.showMore{
+    height: 15px;
+    width: 15px;
+}
+
+
+.downButton{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+}
+
+.downButton:hover{
+    background-color: #c9c9c9;
+}
+/* BUTTON FOR EXPANDING POST */
+
+/* Expanded post columns */
+#postImage{
+    max-width:30%;
+    max-height:30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#descColumn{
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+#textSubmitRow{
+    /* border: #cdcdcd medium solid;
+    border-width: 0.5px;
+    border-radius: 5px; */
+    padding: 10px;
+    margin: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#submitReply{
+    height: 100%;
+}
+
+#replySubmitColumn{
+    padding: 0%;
+    /* padding-top: 20px;
+    padding-bottom: 14px; */
+}
+#addReplyColumn{
+    padding: 0px;
+}
+#replyTextColumn{
+    padding: 0%;
+}
+
+/* Expanded post columns ends*/
+/* Connect and Reply Button css */
+
+.buttonForConnect{
+    background-color: #f9f9f9;
+    color: #5A6268;
+    min-width: initial;
+    border: none;
+}
+.buttonForConnect:hover{
+    background-color: #EEEEEE;
+    /* color: white; */
+    color: #5A6268;
+}
+
+.buttonForReply{
+    background-color: #f9f9f9;
+    color: #5A6268;
+    min-width: initial;
+    border: none;
+}
+.buttonForReply:hover{
+    background-color: #EEEEEE;
+    /* color: white; */
+    color: #5A6268;
+}
+
+.connectCountSpan{
+    margin-left: 10px;
+}
+
+.replyCountSpan{
+    margin-left: 10px;
+}
+/* Button css ends */
+
+
+
 /*
     CSS for testing starts
 */
@@ -8,18 +247,25 @@ body{
 
 
 .custom-card {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background-color: white;
   margin: 15px;
   margin-left: 40px;
-  margin-right: 40px;
+  margin-right: 40px; */
+
+  box-shadow: 0 0 5px rgba(255,255,255,1), 0 0 5px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  background-color: white;
+  margin: 15px;
+  margin-left: 150px;
+  margin-right: 150px;
 
 }
 
 .thumbnail{
     border-radius: 10%;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     margin-top: 7px;
 }
 
@@ -29,47 +275,76 @@ body{
 }
 
 .time-username{
-    font-size: 15px;
+    font-size: 90%;
     padding-top: 3px;
     margin-top: 0px;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 .post-title{
-    font-weight: bold;
-    font-size: 35px;
+    font-weight: 200;
+    font-size: 27px;
     line-height: 100%;
 }
 
 .reply-connect{
-
     padding-top: 5px;
     padding-bottom: 5px;
+
 }
 
 .icon_count{
-    text-align: center;
+    text-align: left;
     font-size: 15px;
+    margin-top: 6px;
 }
 
 .reply_count{
-    text-align: center;
+    text-align: left;
     font-size: 15px;
+    margin-top: 6px;
 }
 .connect-icon{
-    color: blue;
+    color: #5A6268;
+
 }
 
 .reply-icon{
-    color: blue;
+    color: #5A6268;
+
 }
+
 
 .description{
     font-size: 17px;
+    line-height: 1.5;
 }
 
+#posts{
+    text-align: center;
+}
+#sorted-by-label{
+    font-size: 23px;
+    padding-right: 10px;
+    padding-top: 30px;
+}
+#posts-sortby{
+    margin-top: 20px;
+}
 
+#addpost {
+    background-color: grey;
+    display: block; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 50px; /* Place the button at the bottom of the page */
+    right: 50px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border-radius: 10%;
+}
 
+#addpost:hover {
+    opacity: 1;
+}
 /*
     CSS for testing ends
 */
@@ -89,7 +364,7 @@ body{
 }
 
 body{
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Lato', serif;
 }
 
 #welcome-heading{
@@ -127,13 +402,10 @@ body{
     font-size: 17px;
 }
 
-#searchOutsideNavbar{
+#mobilesearchrow{
     display: none;
 }
 
-#searchButtonOutsideNavbar{
-    display: none;
-}
 
 /*
     Media query starts here
@@ -141,8 +413,51 @@ body{
 
 @media only screen and (max-width: 500px) {
 
+    #searchbycol{
+        padding-right: 0px;
+        margin-top: 8px;
+    }
+
+    #searchbygroup{
+        padding-left: 0px;
+    }
+
+    #mobilesearchby{
+        height: 40px;
+    }
+
+    #textSubmitRow{
+        margin: 7px;
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+
+    #replySubmitColumn{
+        padding: 0%;
+        padding-top: 0px;
+        padding-bottom: 7px;
+    }
+
+    #descColumn{
+        padding-top: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    #postImage{
+        max-width:100%;
+        max-height:100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10px;
+    }
+
     .description{
         font-size: default;
+        padding-top: 10px;
     }
 
     .time-username{
@@ -181,6 +496,8 @@ body{
         display: none;
     }
 
+    
+
     #searchOutsideNavbar{
         display: block;
         height: 40px;
@@ -194,6 +511,10 @@ body{
 
     #searchButtonOutsideNavbar{
         height: 40px;
+        display: block;
+    }
+
+    #mobilesearchrow{
         display: block;
     }
 
