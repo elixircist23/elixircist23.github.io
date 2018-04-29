@@ -12,7 +12,7 @@ function navbarSearchBoxOnClick(e) {
 // This function checks if user is in local variable for idex.html
 function onLoadFunctionForIndex() {
     if (localStorage.getItem("username") != null) {
-        window.location.replace("../html/forum.html");
+        window.location.replace("forum.html");
     }
 }
 
