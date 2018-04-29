@@ -12,7 +12,7 @@ function navbarSearchBoxOnClick(e) {
 // This function checks if user is in local variable for idex.html
 function onLoadFunctionForIndex() {
     if (localStorage.getItem("username") != null) {
-        window.location.replace("../html/forum.html");
+        window.location.replace("forum.html");
     }
 }
 
@@ -320,7 +320,7 @@ function onLoadFunctionForForumPosts() {
 
     // alert();
     if (localStorage.getItem("username") === null) {
-        window.location.replace("../html/index.html");
+        window.location.replace("index.html");
     } else {
         $("#usernameDropdown").html(localStorage.username);
 
@@ -411,7 +411,7 @@ function generatePostCards(posts, postType) {
         postImage = "";
 
         if (posts[i].post_image === "") {
-            // postImage = "../assets/batman.jpg";
+            // postImage = "/assets/batman.jpg";
             postImage = posts[i].post_title[0].toUpperCase();
         } else {
             postImage = posts[i].post_image;
@@ -634,7 +634,7 @@ function generatePostCards(posts, postType) {
         //  Down image
         var showMore = document.createElement("img");
         showMore.classList.add("showMore");
-        showMore.setAttribute("src", "../assets/down-arrow.svg");
+        showMore.setAttribute("src", "/assets/down-arrow.svg");
         showMore.setAttribute("id", "buttonImg" + posts[i].post_id);
         showMore.setAttribute("alt", "show more");
         downButton.appendChild(showMore);
@@ -754,7 +754,7 @@ function onClickOfShowPost(post_id) {
     var addReplyRow = document.getElementById("addReplyRow" + post_id);
 
     if (replyRow.style.display === "none") {
-        buttonIcon.setAttribute("src", "../assets/up-arrow.svg");
+        buttonIcon.setAttribute("src", "/assets/up-arrow.svg");
         addReplyRow.style.display = "none";
         replyRow.style.display = "block";
         crdRow.style.display = "none";
@@ -782,7 +782,7 @@ function onClickOfShowPost(post_id) {
     } else if (replyRow.style.display === "block") {
         addReplyRow.innerHTML = "";
         replyRow.style.display = "none";
-        buttonIcon.setAttribute("src", "../assets/down-arrow.svg");
+        buttonIcon.setAttribute("src", "/assets/down-arrow.svg");
         crdRow.style.display = "block";
     }
 
