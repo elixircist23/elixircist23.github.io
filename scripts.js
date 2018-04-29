@@ -12,7 +12,7 @@ function navbarSearchBoxOnClick(e) {
 // This function checks if user is in local variable for idex.html
 function onLoadFunctionForIndex() {
     if (localStorage.getItem("username") != null) {
-        window.location.replace("forum.html");
+        window.location.replace("../html/forum.html");
     }
 }
 
@@ -320,7 +320,7 @@ function onLoadFunctionForForumPosts() {
 
     // alert();
     if (localStorage.getItem("username") === null) {
-        window.location.replace("index.html");
+        window.location.replace("../html/index.html");
     } else {
         $("#usernameDropdown").html(localStorage.username);
 
