@@ -320,7 +320,7 @@ function onLoadFunctionForForumPosts() {
 
     // alert();
     if (localStorage.getItem("username") === null) {
-        window.location.replace("../html/index.html");
+        window.location.replace("index.html");
     } else {
         $("#usernameDropdown").html(localStorage.username);
 
