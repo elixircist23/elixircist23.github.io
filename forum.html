@@ -24,7 +24,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Custom CSS  -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
 
     <title>Etsal</title>
@@ -35,26 +35,29 @@
     <!-- Image and text -->
     <nav class="navbar fixed-top navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-            <b>Etsal</b>
+            <img src="../assets/Etsal_Logo_With_Name.png" width="85" height="35" class="d-inline-block align-top" alt="Etsal">
         </a>
 
 
 
         <div id="searchOnNavbar">
 
+            <!-- search section on desktop -->
             <form class="form-inline my-2 my-lg-0">
-
-
                 <select class="form-control mr-sm-2 custom-select" id="searchByOption">
                     <option selected>Search by</option>
                     <option value="1">Post</option>
-                    <option value="2">Username</option>
+                    <option value="2">Username</option>   
                 </select>
 
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id = "searchById">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchPostBy()">Search</button>
+                <!-- <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" id="searchById" onkeyup="navbarSearchBoxOnClick()"> -->
+
+                <input type="text" class="form-control mr-sm-2" id="searchById" placeholder="Search" onkeyup="navbarSearchBoxOnClick(this)">
+
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchPostBy('fromSearchButtonType','fromSearchButtonUsername')">Search</button>
             </form>
+
+
         </div>
 
         <div class="btn-group">
@@ -62,15 +65,14 @@
                 id="usernameDropdown">
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <button class="dropdown-item" type="button">My Account</button>
-                <button class="dropdown-item" type="button">About</button>
+                <button class="dropdown-item" type="button" onclick="showMyAccount()">My Account</button>
                 <button class="dropdown-item" type="button" onclick="onClickOfLogout()">Logout</button>
             </div>
         </div>
     </nav>
 
 
-    <div class="container-fluid" style = "padding-top: 48px;">
+    <div class="container-fluid" style="padding-top: 48px;">
 
         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="addpost" data-toggle="modal"
             data-target="#exampleModalCenter">
@@ -80,42 +82,30 @@
             <strong>Add a new post</strong>
         </div>
 
-
-        <!-- Search section for mobile -->
-
-        <!-- <div class="row" id="searchAndButtonOutsideNav">
-            <div class="col-3" id="searchbycol">
-                <select class="form-control custom-select" id="mobilesearchby">
+        <!-- Mobile search section  -->      
+        <div  class = "row" id = "newSearchHolderMobile">
+            <div class = "col-3" id = "newSearchByMobile">
+                <select class="form-control custom-select" id="searchByOptionMobile">
                     <option selected>By</option>
                     <option value="1">Post</option>
-                    <option value="2">Username</option>
+                    <option value="2">User</option>
                 </select>
             </div>
-            <div class="col-9 input-group" id="searchbygroup">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchOutsideNavbar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="testSubmit()" id="searchButtonOutsideNavbar">Search</button>
+            <div class = "col-6" id = "newSearchBoxMobile">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchByIdMobile" onkeyup="navbarSearchBoxOnClick(this)"> 
             </div>
-        </div> -->
-
-
-        <div class="row" id="mobilesearchrow">
-                <div class="col-3" id="">
-                    <select class="form-control custom-select" id="">
-                        <option selected>By</option>
-                        <option value="1">Post</option>
-                        <option value="2">Username</option>
-                    </select>
-                </div>
-                <div class="col-9 input-group" id="">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="testSubmit()" id="">Search</button>
-                </div>
+            <div class = "col-3" id = "newSearchButtonMobile">
+                <button class="btn btn-outline-success newSearchButtonButtonMobile" onclick="searchPostBy('fromSearchButtonTypeMobile','fromSearchButtonUsername')" id="">Search</button>
             </div>
+            
+        </div>
 
 
 
 
         <div class="row" id="posts-sortby">
+
+            <!-- Sorting -->
             <div class="col-lg-12 col-12 col-md-12" id="posts">
                 <span id="sorted-by-label">Sorted by</span>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -127,8 +117,22 @@
                     </label>
                 </div>
             </div>
-        </div>
 
+            <!-- Search by -->
+            <div class="col-lg-12 col-12 col-md-12" style="display:none;" id = "searchMessageColumn">
+                <div  id="usernameAndAllFormPosts">
+                    <div class="row">
+                        <div class="col-lg-8 col-8 col-md-8" id="searchMessage">
+                            
+                        </div>
+                        <div class="col-lg-4 col-4 col-md-4" id="allForumPostsButton">
+                            <button class="btn btn-primary" type="button" onclick="onLoadFunctionForForumPosts()" id="">All forum posts</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
 
         <div class="row" id="post-holder">
@@ -209,7 +213,7 @@
         crossorigin="anonymous"></script>
 
 
-    <script src="scripts.js"></script>
+    <script src="../javascript/scripts.js"></script>
 
 
 </body>

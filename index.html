@@ -12,21 +12,22 @@
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Barlow:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
     <!-- Custom CSS  -->
     <link rel="stylesheet" href="styles.css">
+    
 
 
     <title>Etsal</title>
 </head>
 
-<body>
+<body onload="onLoadFunctionForIndex()">
 
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-            <b>Etsal</b>
+            <img src="../assets/Etsal_Logo_With_Name.png" width="85" height="35" class="d-inline-block align-top" alt="Etsal">  
         </a>
 
 
@@ -54,8 +55,7 @@
 
                 <div class="row">
                     <div class="col-sm-12" id="welcome-message">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur placeat libero recusandae aliquam illum molestiae nostrum
-                        facilis quibusdam, ab, dignissimos impedit numquam a aut, ut ex dolores quaerat soluta eveniet.
+                            Welcome to <b>Etsal</b>, an anonymous messaging board for NJIT community to express their thoughts freely
                     </div>
                 </div>
 
@@ -104,13 +104,6 @@
                                     <div class="col-sm-12">
                                         <input type="password" class="form-control margin-top-for-form-elements" id="password_login" placeholder="Password" name="password"
                                             onblur="onBlurFormValidation('password_login')" onkeypress="return loginSubmitButtonEvent(event)">
-                                    </div>
-                                </div>
-
-
-                                <div class="row margin-top-for-form-elements">
-                                    <div class="col-sm-12">
-                                        <a href="#">Forgot password?</a>
                                     </div>
                                 </div>
 
@@ -177,7 +170,7 @@
 
                                 <div class="row margin-top-for-form-elements" id="invalidRegister" style="display: none;">
                                     <div class="col-sm-12" style="color:#E14938;">
-                                        Passwords don't match
+                                        Passwords doesn't match
                                     </div>
                                 </div>
 
@@ -187,13 +180,15 @@
                                     </div>
                                 </div>
 
+                               
+
                             </form>
                         </div>
                     </div>
                     <div class="modal-footer margin-top-for-form-elements">
 
                         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                        <button type="button" class="btn btn-primary" onclick="registerNewUser()">Register</button>
+                        <button type="button" class="btn btn-primary" id = "regiterUserButtonId" onclick="registerNewUser()">Register</button>
                     </div>
                 </div>
             </div>
